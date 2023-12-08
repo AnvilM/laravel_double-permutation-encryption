@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Session;
 class HomeController extends Controller
 {
 
+    /**
+     * Обработчик запросов
+     *
+     * @param  mixed $request Данные, переданные в запросе
+     * @return void
+     */
     public function handler(Request $request)
     {
         //Валидация исходных данных
@@ -22,6 +28,12 @@ class HomeController extends Controller
         $this->$func($request->post('src'));
     }
 
+    /**
+     * Шифрование
+     *
+     * @param  mixed $src Исходный текст
+     * @return void
+     */
     public function encrypt($src)
     {
 
@@ -81,6 +93,12 @@ class HomeController extends Controller
         }
     }
 
+    /**
+     * Дешифрование
+     *
+     * @param  mixed $src Зашифрованное сообщение
+     * @return void
+     */
     public function decrypt($src)
     {
 
